@@ -1,4 +1,4 @@
-# Google-Oauth2-Concept-001
+# Lab Google Oauth2
 
 project name: oauth2-concept-001
 
@@ -17,8 +17,9 @@ Video: https://www.youtube.com/watch?v=OitgkKTxht4
 
 ## Notes
 
-Go to google cloud console and create a new google cloud project.
-Go to the APIs and Services.
+- Go to google cloud console and create a new google cloud project.
+- Go to the APIs and Services.
+- Add npm deps: @nestjs/passport passport passport-google-oauth20
 
 ## Installation
 
