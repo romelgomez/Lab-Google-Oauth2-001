@@ -8,7 +8,7 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: 'config/.env',
+      envFilePath: 'src/config/.env',
     }),
 
     AuthModule,
