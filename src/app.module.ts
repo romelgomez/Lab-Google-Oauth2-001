@@ -1,14 +1,35 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
-import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './modules/auth/auth.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { SnakeNamingStrategy } from './strategies/snake-naming.strategy';
+import { AppConfigService } from './modules/config/config.service';
+import { AppConfigModule } from './modules/config/config.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: 'src/config/.env',
+    AppConfigModule,
+
+    TypeOrmModule.forRootAsync({
+      inject: [AppConfigService],
+      useFactory: (appConfigService: AppConfigService) => {
+        const { type, host, port, username, password, database, synchronize } =
+          appConfigService.getDatabaseConfig();
+
+        return {
+          type,
+          host,
+          port,
+          username,
+          password,
+          database,
+          synchronize,
+          // https://stackoverflow.com/questions/51562162/no-metadata-for-user-was-found-using-typeorm
+          entities: [__dirname + '/**/*.entity{.ts,.js}'],
+          namingStrategy: new SnakeNamingStrategy(),
+        };
+      },
     }),
 
     AuthModule,
