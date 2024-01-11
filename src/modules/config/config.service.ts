@@ -38,9 +38,11 @@ export class AppConfigService {
         secret: this.getEnvVal(ProcessEnvEnum.JWT_SECRET),
         expiresIn: this.getEnvVal(ProcessEnvEnum.JWT_EXPIRATION_TIME),
       },
-      clientID: this.getEnvVal(ProcessEnvEnum.GOOGLE_CLIENT_ID),
-      clientSecret: this.getEnvVal(ProcessEnvEnum.GOOGLE_CLIENT_SECRET),
-      callbackURL: this.getEnvVal(ProcessEnvEnum.GOOGLE_CALLBACK_URL),
+      googleOAuthConfig: {
+        clientID: this.getEnvVal(ProcessEnvEnum.GOOGLE_CLIENT_ID),
+        clientSecret: this.getEnvVal(ProcessEnvEnum.GOOGLE_CLIENT_SECRET),
+        callbackURL: this.getEnvVal(ProcessEnvEnum.GOOGLE_CALLBACK_URL),
+      },
     };
   }
 

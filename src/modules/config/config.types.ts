@@ -29,9 +29,11 @@ export type EnvironmentConfig = {
     secret: string;
     expiresIn: string;
   };
-  clientID: string;
-  clientSecret: string;
-  callbackURL: string;
+  googleOAuthConfig: {
+    clientID: string;
+    clientSecret: string;
+    callbackURL: string;
+  };
 };
 
 export enum ProcessEnvEnum {
