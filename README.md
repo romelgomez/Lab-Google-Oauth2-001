@@ -6,14 +6,14 @@ Video: https://www.youtube.com/watch?v=OitgkKTxht4
 
 ## Steps
 
-- [ ] Create Google OAuth2 App in Google Console
-- [ ] Create NestJS Project
-- [ ] Create Auth Controller
-- [ ] Create Auth Service
-- [ ] Create Google Strategy
-- [ ] Create Google Auth Guard
-- [ ] Connect to a Database
-- [ ] Configure Sessions
+- [x] Create Google OAuth2 App in Google Console
+- [x] Create NestJS Project
+- [x] Create Auth Controller
+- [x] Create Auth Service
+- [x] Create Google Strategy
+- [x] Create Google Auth Guard
+- [x] Connect to a Database
+- [x] Configure Sessions
 
 ## Notes
 
