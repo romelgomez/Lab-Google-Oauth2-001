@@ -6,10 +6,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { SnakeNamingStrategy } from './strategies/snake-naming.strategy';
 import { AppConfigService } from './modules/config/config.service';
 import { AppConfigModule } from './modules/config/config.module';
+import { UserModule } from './modules/users/user.module';
+import { PassportModule } from '@nestjs/passport';
 
 @Module({
   imports: [
     AppConfigModule,
+
+    UserModule,
+
+    PassportModule.register({ session: true }),
 
     TypeOrmModule.forRootAsync({
       inject: [AppConfigService],
