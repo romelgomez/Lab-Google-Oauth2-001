@@ -20,7 +20,7 @@ export class AuthController {
 
   @Get('status')
   getStatus(@Req() request) {
-    console.log('request', request.user);
+    // console.log('request', request.user);
 
     if (request.user) {
       return {
